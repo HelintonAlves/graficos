@@ -64,7 +64,9 @@ public class Game extends Canvas implements Runnable {
         g = bs.getDrawGraphics();
         g.drawImage(image,0,0,WIDTH*SCALE,HEIGHT*SCALE,null);
 
-
+        //Renderizando objetos na tela exemplo
+        g.setColor(Color.RED);
+        g.fillOval(0,0,40,40);
 
         bs.show();
     }
