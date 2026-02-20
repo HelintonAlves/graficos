@@ -7,7 +7,7 @@ Este repositório contém o progresso técnico desenvolvido durante o módulo de
 ## 🖼️ Resultado Visual
 
 <p align="center">
-  <img ![Animação](https://github.com/user-attachments/assets/76bdd722-ee4a-48f8-9fbc-fd9034b89e60) width="500px" alt="Demonstração do Jogo">
+  <img src="![Animação](https://github.com/user-attachments/assets/76bdd722-ee4a-48f8-9fbc-fd9034b89e60)" width="500px" alt="Demonstração do Jogo">
   <br>
   <em>Demonstração do player com animação e rotação</em>
 </p>
