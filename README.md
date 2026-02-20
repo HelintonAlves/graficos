@@ -1,53 +1,51 @@
-🎮 Projeto: Evolução Gráfica (Danki Code)
-Este repositório contém o progresso técnico desenvolvido durante o módulo de Gráficos e Sprites do curso de Desenvolvimento de Games da Danki Code. O foco aqui foi entender como a máquina renderiza imagens, como otimizar o processamento visual e como dar vida a personagens através de animações.
+# 🎮 Projeto: Evolução Gráfica (Danki Code)
 
-🚀 Tecnologias Utilizadas
-Java (Lógica central)
+Este repositório contém o progresso técnico desenvolvido durante o módulo de **Gráficos e Sprites** do curso de Desenvolvimento de Games da Danki Code. O foco foi entender a renderização de baixo nível, otimização e animação.
 
-Java AWT / Swing (Interface e renderização)
+---
 
-Canvas & JFrame (Manipulação de tela)
+## 🖼️ Resultado Visual
 
-🧠 Aprendizados por Etapa
-Dividi meu aprendizado em 7 marcos fundamentais, simulando a estrutura de uma engine profissional:
+<p align="center">
+  <img ![Animação](https://github.com/user-attachments/assets/76bdd722-ee4a-48f8-9fbc-fd9034b89e60) width="500px" alt="Demonstração do Jogo">
+  <br>
+  <em>Demonstração do player com animação e rotação</em>
+</p>
 
-1. A Fundação (Frame e Canvas)
-Configuração da janela do jogo (JFrame) e do espaço de desenho (Canvas). Aprendi a importância de separar a lógica do jogo da renderização visual.
+---
 
-2. O Coração do Game: Game Loop Profissional
-Implementação de um Game Loop robusto utilizando System.nanoTime(). Isso garante que o jogo rode na mesma velocidade em qualquer computador (controle de FPS e UPS).
+## 🚀 Tecnologias Utilizadas
+* **Java** (Lógica central)
+* **Java AWT / Swing** (Interface e renderização)
+* **Canvas & JFrame** (Manipulação de tela)
 
-3. Otimização com Buffers
-Uso de BufferStrategy e BufferedImage. Aprendi a desenhar "nos bastidores" antes de enviar para a tela, eliminando o efeito de flickering (piscagem) nas imagens.
+---
 
-4. Debug e Geometria
-Criação de ferramentas de debug para visualizar áreas de colisão e renderização de formas geométricas simples antes de implementar a arte final.
+## 🧠 Cronograma de Aprendizado
 
-5. Renderizando Strings
-Manipulação de fontes e renderização de textos dinâmicos na tela, essencial para sistemas de interface (UI), pontuação e menus.
+### 1. A Fundação (Frame e Canvas)
+Configuração da janela do jogo (`JFrame`) e do espaço de desenho (`Canvas`), separando a lógica da renderização.
 
-6. Sistema de Spritesheets
-Implementação de um sistema para recortar e renderizar sprites a partir de uma Spritesheet única.
+### 2. Game Loop Profissional
+Implementação de um loop robusto com controle de **FPS** e **UPS**, garantindo que o jogo rode na mesma velocidade em qualquer hardware.
 
-Player: Criação da classe do jogador e extração dos frames corretos.
+### 3. Renderizando e Buffers
+Uso de `BufferStrategy` e `BufferedImage` para criar renderização em camadas, eliminando o efeito de oscilação (*flickering*).
 
-7. Animações e Matemática (Rotação)
-O nível final!
+### 4. Gráficos e Debug
+Desenvolvimento de ferramentas visuais para depuração e renderização de formas geométricas para testes de colisão.
 
-Criação de sistemas de Timer para troca de frames de animação.
+### 5. Renderizando Strings
+Manipulação e desenho de textos dinâmicos na tela para sistemas de interface e pontuação.
 
-Uso de Graphics2D para aplicar rotações em objetos, permitindo movimentos mais fluidos e dinâmicos.
+### 6. Spritesheet e Player
+Criação do sistema para recortar e renderizar sprites a partir de uma folha de sprites única, focando na classe do Jogador.
 
-🛠️ Como Executar
-Certifique-se de ter o JDK instalado.
+### 7. Animações e Rotação
+Implementação de lógica de tempo para troca de frames e uso de `Graphics2D` para aplicar rotações matemáticas em objetos.
 
-Clone o repositório:
+---
 
-Bash
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
-Compile e execute a classe principal (geralmente Game.java).
+> "O desenvolvimento de jogos é a mistura perfeita entre arte e matemática."
 
-🖼️ Resultado Visual
-![Animação](https://github.com/user-attachments/assets/992e7a14-a801-4808-9f03-db582d3e58ab)
-
-"O desenvolvimento de jogos é a mistura perfeita entre arte e matemática."
+---
