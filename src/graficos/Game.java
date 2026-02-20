@@ -2,6 +2,8 @@ package graficos;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
 
 public class Game extends Canvas implements Runnable {
 
@@ -11,11 +13,13 @@ public class Game extends Canvas implements Runnable {
     private final int WIDTH = 160;
     private final int HEIGHT = 120;
     private final int SCALE = 4;
+    private BufferedImage image;
 
 
     public Game(){
         setPreferredSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));
         initFrame();
+        image = new BufferedImage(WIDTH, HEIGHT,BufferedImage.TYPE_INT_RGB);
     }
 
     public void initFrame(){
@@ -32,8 +36,6 @@ public class Game extends Canvas implements Runnable {
         thread = new Thread(this);
         isRunning = true;
         thread.start();
-
-
     }
 
     public synchronized void stop(){
@@ -45,7 +47,17 @@ public class Game extends Canvas implements Runnable {
     }
 
     public void render(){
-
+        BufferStrategy bs = this.getBufferStrategy();
+        if (bs == null){
+            this.createBufferStrategy(3);
+            return;
+        }
+        Graphics g = image.getGraphics();
+        g.setColor(new Color(0,98,0));
+        g.fillRect(0,0,160, 120);
+        g = bs.getDrawGraphics();
+        g.drawImage(image,0,0,WIDTH*SCALE,HEIGHT*SCALE,null);
+        bs.show();
     }
 
     public static void main(String[] args){
