@@ -15,12 +15,19 @@ public class Game extends Canvas implements Runnable {
     private final int SCALE = 3;
     private final BufferedImage image;
     private SpriteSheet sheet;
-    private BufferedImage player;
+    private BufferedImage[] player;
+    private int frames = 0;
+    private int maxFrames = 10;
+    private int curAnimation = 0, maxAnimation = 4;
 
 
     public Game(){
         sheet = new SpriteSheet("/spritesheet.png");
-        player = sheet.getSprite(0, 0, 16, 16);
+        player = new BufferedImage[4];
+        player[0] = sheet.getSprite(0, 0, 16, 16);
+        player[1] = sheet.getSprite(16, 0, 16, 16);
+        player[2] = sheet.getSprite(32, 0, 16, 16);
+        player[3] = sheet.getSprite(48, 0, 16, 16);
         setPreferredSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));
         initFrame();
         image = new BufferedImage(WIDTH, HEIGHT,BufferedImage.TYPE_INT_RGB);
@@ -52,7 +59,15 @@ public class Game extends Canvas implements Runnable {
     }
 
     public void tick(){
+        frames++;
+        if (frames > maxFrames){
+            frames = 0;
+            curAnimation++;
+            if (curAnimation >= maxAnimation){
+                curAnimation = 0;
+            }
 
+        }
     }
 
     public void render(){
@@ -62,6 +77,7 @@ public class Game extends Canvas implements Runnable {
             return;
         }
         Graphics g = image.getGraphics();
+        Graphics2D g2 = (Graphics2D) g;
         //Backgroud
         g.setColor(new Color(0,98,0));
         g.fillRect(0,0,WIDTH, HEIGHT);
@@ -78,7 +94,7 @@ public class Game extends Canvas implements Runnable {
         g.drawString("Olá Mundo!", 80,30);
 
         //Renderizando o player
-        g.drawImage(player, 30, 60,null);
+        g.drawImage(player[curAnimation], 30, 60,null);
 
 
 
