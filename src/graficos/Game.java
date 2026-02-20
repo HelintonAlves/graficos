@@ -13,7 +13,7 @@ public class Game extends Canvas implements Runnable {
     private final int WIDTH = 160;
     private final int HEIGHT = 120;
     private final int SCALE = 4;
-    private BufferedImage image;
+    private final BufferedImage image;
 
 
     public Game(){
@@ -39,7 +39,12 @@ public class Game extends Canvas implements Runnable {
     }
 
     public synchronized void stop(){
-
+        isRunning = false;
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void tick(){
@@ -53,10 +58,14 @@ public class Game extends Canvas implements Runnable {
             return;
         }
         Graphics g = image.getGraphics();
+        //Backgroud
         g.setColor(new Color(0,98,0));
         g.fillRect(0,0,160, 120);
         g = bs.getDrawGraphics();
         g.drawImage(image,0,0,WIDTH*SCALE,HEIGHT*SCALE,null);
+
+
+
         bs.show();
     }
 
@@ -90,6 +99,8 @@ public class Game extends Canvas implements Runnable {
             }
 
         }
+
+        stop();
 
     }
 }
